@@ -31,5 +31,11 @@ namespace AjaxWebApplication.Controllers
             Car car = new Car { PersonId = id };
             return PartialView(viewName: "_Create2", model: car);
         }
+
+        [HttpPost]
+        public string _Create2(int id, Car model)
+        {
+            return "A car was successfully created";
+        }
     }
 }
