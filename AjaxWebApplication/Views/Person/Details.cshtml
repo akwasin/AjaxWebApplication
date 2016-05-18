@@ -33,6 +33,7 @@
     @Html.ActionLink("Back to List", "Index")
 </p>
 
+@*-------- Part 1 Simple Ajax from controller--------*@
 @Ajax.ActionLink(
     linkText:"If you click here, I use Ajax to get information from the PersonConstroller",
     actionName:"HitMe",
@@ -42,3 +43,20 @@
         InsertionMode = InsertionMode.InsertAfter
     })
 <div id="ajaxtarget"></div>
+
+@*-------- Part 2 Partial View--------*@
+@Ajax.ActionLink(
+    linkText:"Part 2 with a car",
+    actionName: "_Create",
+    controllerName: "Car",
+    routeValues: new {id = Model.ID},
+    ajaxOptions: new AjaxOptions
+    {
+        UpdateTargetId = "ajaxpartialtarget",
+        InsertionMode = InsertionMode.Replace
+    }
+    )
+<div id="ajaxpartialtarget"></div>
+@*-------- Part 3 --------*@
+
+@*-------- Part 4 --------*@
